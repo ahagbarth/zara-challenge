@@ -31,7 +31,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
   return (
     <InfoContainer>
       <ImageContainer>
-        <Image src={color.imageUrl} alt={name} fill objectFit="contain" />
+        <Image src={color.imageUrl} alt={name} fill objectFit="contain" priority />
       </ImageContainer>
       <Info>
         <Title>
