@@ -11,7 +11,7 @@ export const CardContainer = styled.a`
   height: 344px;
   transition: all 0.4s ease-in;
   overflow: hidden;
-  
+
   :hover {
     color: white !important;
   }

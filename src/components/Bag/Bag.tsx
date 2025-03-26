@@ -6,8 +6,8 @@ import { useStore } from '@/lib/StoreContext/StoreProvider';
 import { TStore } from '@/lib/StoreContext/types';
 
 const Bag: React.FC = () => {
-  const { cart} = useStore() as TStore;
-  const quantity = cart.length
+  const { cart } = useStore() as TStore;
+  const quantity = cart.length;
 
   return (
     <BagContainer href="/cart">

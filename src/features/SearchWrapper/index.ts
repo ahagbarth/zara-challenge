@@ -1,3 +1,3 @@
-import SearchWrapper from "./SearchWrapper";
+import SearchWrapper from './SearchWrapper';
 
-export default SearchWrapper
+export default SearchWrapper;

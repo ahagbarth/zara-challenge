@@ -1,17 +1,21 @@
+import { TCartItem } from '../CartItem/types';
+
 export type StorageOption = {
-    capacity: string;
+  capacity: string;
+  price?: number;
 };
 
 export type ColorOption = {
-    name: string;
-    hexCode: string;
-    imageUrl: string;
+  name: string;
+  hexCode: string;
+  imageUrl: string;
 };
 
 export type ProductInfoProps = {
-    name: string;
-    price: number;
-    storageOptions: StorageOption[];
-    colorOptions: ColorOption[];
-    onAddToCart: () => void
+  id: string;
+  name: string;
+  price: number;
+  storageOptions: StorageOption[];
+  colorOptions: ColorOption[];
+  onAddToCart: (_product: TCartItem) => void;
 };

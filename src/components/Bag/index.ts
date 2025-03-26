@@ -1,3 +1,3 @@
-import Bag from "./Bag";
+import Bag from './Bag';
 
-export default Bag
+export default Bag;

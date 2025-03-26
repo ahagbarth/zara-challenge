@@ -4,9 +4,16 @@ import { StorageContainer } from './styles';
 import Label from '../Label';
 import { TStorageComponent } from './types';
 
-const Storage: React.FC<TStorageComponent> = ({ storage, isActive, setActiveStorage }) => {
+const Storage: React.FC<TStorageComponent> = ({
+  storage,
+  isActive,
+  setActiveStorage,
+}) => {
   return (
-    <StorageContainer isActive={isActive} onClick={() => setActiveStorage(storage)}>
+    <StorageContainer
+      isActive={isActive}
+      onClick={() => setActiveStorage(storage)}
+    >
       <Label text={storage.capacity} variant="subtitle" />
     </StorageContainer>
   );

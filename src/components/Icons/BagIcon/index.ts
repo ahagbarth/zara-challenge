@@ -1,3 +1,3 @@
-import BagIcon from "./BagIcon";
+import BagIcon from './BagIcon';
 
-export default BagIcon
+export default BagIcon;

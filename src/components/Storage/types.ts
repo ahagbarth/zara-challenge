@@ -1,5 +1,6 @@
 export type TStorage = {
   capacity: string;
+  price?: number;
 };
 
 export type TStorageComponent = {

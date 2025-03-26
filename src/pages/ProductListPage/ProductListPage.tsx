@@ -10,9 +10,9 @@ import { TProduct } from '@/features/ProductGrid/types';
 
 const ProductListPage: React.FC<{ products: TProduct[] }> = ({ products }) => {
   const { setProducts, search } = useStore() as TStore;
-  
+
   useEffect(() => {
-    setProducts(products)
+    setProducts(products);
   }, []);
 
   useEffect(() => {
@@ -27,8 +27,6 @@ const ProductListPage: React.FC<{ products: TProduct[] }> = ({ products }) => {
         setProducts(data);
       });
   }, [search, setProducts]);
-
-
 
   return (
     <PageContainer>

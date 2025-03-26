@@ -15,7 +15,7 @@ const Home = async () => {
 
   const products = await data.json();
 
-  return <ProductListPage products={products}/>;
+  return <ProductListPage products={products} />;
 };
 
 export default Home;

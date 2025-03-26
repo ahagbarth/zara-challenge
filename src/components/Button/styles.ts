@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
 
-export const ButtonComponent = styled.button<{ isOutlined: boolean }>`
+export const ButtonComponent = styled.button<{
+  isOutlined: boolean;
+  isFullWidth: boolean;
+}>`
   width: 116px;
   height: 40px;
   border: 0.5px solid #1b1a18;
@@ -12,22 +15,11 @@ export const ButtonComponent = styled.button<{ isOutlined: boolean }>`
   text-align: center;
   vertical-align: middle;
   text-transform: uppercase;
-  /* background: #1b1a18;
-  color: #ffffff;
-
-  :hover {
-    color: #504d49;
-    border: 0.5px solid #282624;
-  }
-
-  :active {
-    border: 0.5px solid #363331;
-  }
-
-  :active {
-    color: #c2bfbc;
-    border: 0.5px solid #dbd9d7;
-  } */
+  ${({ isFullWidth }) =>
+    isFullWidth &&
+    `
+    width: 100%;
+  `}
 
   ${({ isOutlined }) =>
     !isOutlined &&
@@ -53,7 +45,7 @@ export const ButtonComponent = styled.button<{ isOutlined: boolean }>`
 
       `}
 
-${({ isOutlined }) =>
+  ${({ isOutlined }) =>
     isOutlined &&
     `
         background: transparent;

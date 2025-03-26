@@ -7,6 +7,7 @@ import {
   StorageContainer,
   ColorContainer,
   SelectorContainer,
+  ImageContainer,
 } from './styles';
 import Label from '../Label';
 import Storage from '../Storage';
@@ -14,8 +15,10 @@ import Color from '../Color';
 import Image from 'next/image';
 import { ProductInfoProps } from './types';
 import Button from '../Button';
+import { TStorage } from '../Storage/types';
 
 const ProductInfo: React.FC<ProductInfoProps> = ({
+  id,
   name,
   price,
   storageOptions,
@@ -23,20 +26,21 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
   onAddToCart,
 }) => {
   const [color, setColor] = useState(colorOptions[0]);
-  const [selectedStorage, setStorage] = useState(storageOptions[0]);
+  const [selectedStorage, setStorage] = useState<TStorage | null>(null);
 
   return (
     <InfoContainer>
-      <Image src={color.imageUrl} alt={name} width={414} height={414} />
+      <ImageContainer>
+        <Image src={color.imageUrl} alt={name} fill objectFit="contain" />
+      </ImageContainer>
       <Info>
         <Title>
-          <Label text={name} variant="header" />
-          {/* TODO: From should only be displayed if no storage is selected */}
+          <Label text={name} variant="header" isUpperCase />
           <Label
             text={
-              price !== selectedStorage.price
-                ? `From ${selectedStorage.price} EUR`
-                : `${selectedStorage.price} EUR`
+              Boolean(selectedStorage?.price)
+                ? `${selectedStorage?.price} EUR`
+                : `From ${price} EUR`
             }
           />
         </Title>
@@ -48,7 +52,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
                 <Storage
                   key={storage.capacity}
                   storage={storage}
-                  isActive={selectedStorage.capacity === storage.capacity}
+                  isActive={selectedStorage?.capacity === storage.capacity}
                   setActiveStorage={setStorage}
                 />
               ))}
@@ -68,7 +72,19 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
             <Label text={color.name} />
           </SelectorContainer>
         </Selectors>
-        <Button onClick={onAddToCart}> Add to cart</Button>
+        <Button
+        isFullWidth
+          onClick={() =>
+            onAddToCart({
+              name,
+              id,
+              colorOption: color,
+              storageOption: selectedStorage as TStorage,
+            })
+          }
+        >
+          Add to cart
+        </Button>
       </Info>
     </InfoContainer>
   );

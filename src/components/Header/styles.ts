@@ -6,9 +6,9 @@ export const HeaderContainer = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 24px 16px ;
+  padding: 24px 16px;
   position: fixed;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 100%;
   z-index: 2;
 `;

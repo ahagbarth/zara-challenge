@@ -1,3 +1,3 @@
-import SpecificationRow from "./SpecificationRow";
+import SpecificationRow from './SpecificationRow';
 
-export default SpecificationRow
+export default SpecificationRow;

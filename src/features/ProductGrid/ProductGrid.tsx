@@ -6,13 +6,13 @@ import { useStore } from '@/lib/StoreContext/StoreProvider';
 import { TStore } from '@/lib/StoreContext/types';
 
 const ProductGrid: React.FC<TProductGrid> = () => {
-    const {products} = useStore() as TStore;
+  const { products } = useStore() as TStore;
 
   return (
     <GridContainer>
       {products.map((product, index) => (
-          <Card key={index} {...product} />
-        ))}
+        <Card key={index} {...product} />
+      ))}
     </GridContainer>
   );
 };

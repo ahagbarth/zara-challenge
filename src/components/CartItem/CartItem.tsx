@@ -7,24 +7,34 @@ import {
   Info,
   Model,
   Price,
+  RemoveButton,
 } from './styles';
 import Label from '../Label';
+import Image from 'next/image';
+import { TCartItem } from './types';
 
-const CartItem = () => {
+const CartItem: React.FC<{ product: TCartItem; onClick: () => void }> = ({
+  product,
+  onClick,
+}) => {
+  const { name, storageOption, colorOption } = product;
+
   return (
     <CartItemContainer>
-      <ImageContainer>.</ImageContainer>
+      <ImageContainer>
+        <Image src={colorOption.imageUrl} alt={name} fill objectFit="contain" />
+      </ImageContainer>
       <DetailsContainer>
         <Info>
           <Model>
-            <Label text="Iphone 15 pro" />
-            <Label text="128 GB  | Blue titanium" />
+            <Label text={name} />
+            <Label text={`${storageOption.capacity} | ${colorOption.name}`} />
           </Model>
           <Price>
-            <Label text="1099 EUR" />
+            <Label text={`${storageOption.price} EUR`} />
           </Price>
         </Info>
-        <button>Eliminar</button>
+        <RemoveButton onClick={onClick}>Eliminar</RemoveButton>
       </DetailsContainer>
     </CartItemContainer>
   );

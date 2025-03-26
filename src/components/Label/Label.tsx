@@ -6,7 +6,7 @@ const Label: React.FC<{
   text: string;
   isUpperCase?: boolean;
   variant?: string;
-}> = ({ text, isUpperCase = false, variant = "body" }) => {
+}> = ({ text, isUpperCase = false, variant = 'body' }) => {
   return (
     <Typography variant={variant}>
       {isUpperCase ? text.toUpperCase() : text}

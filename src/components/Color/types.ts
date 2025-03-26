@@ -1,10 +1,10 @@
 export type TColor = {
-    name: string;
-    hexCode: string;
-    imageUrl: string;
+  name: string;
+  hexCode: string;
+  imageUrl: string;
 };
 
 export type TColorComponent = {
-    color: TColor;
-    setActiveColor: (color: TColor) => void;
-}
+  color: TColor;
+  setActiveColor: (color: TColor) => void;
+};

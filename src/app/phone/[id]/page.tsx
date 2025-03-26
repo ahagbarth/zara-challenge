@@ -1,6 +1,6 @@
 import ProductDetailPage from '@/pages/ProductDetailPage';
 import React from 'react';
-import ErrorPage  from '@/pages/ErrorPage';
+import ErrorPage from '@/pages/ErrorPage';
 
 const PhoneDetailPage = async ({ params }: { params: { id: string } }) => {
   const { id } = await params;
@@ -11,13 +11,12 @@ const PhoneDetailPage = async ({ params }: { params: { id: string } }) => {
       headers: { 'x-api-key': '87909682e6cd74208f41a6ef39fe4191' },
     }
   );
-    
+
   if (!data.ok) {
     return <ErrorPage />;
   }
-  
-  const phone = await data.json();
 
+  const phone = await data.json();
 
   return <ProductDetailPage phone={phone} />;
 };

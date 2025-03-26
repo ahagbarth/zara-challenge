@@ -1,3 +1,3 @@
-import SpecsList from "./SpecsList";
+import SpecsList from './SpecsList';
 
-export default SpecsList
+export default SpecsList;

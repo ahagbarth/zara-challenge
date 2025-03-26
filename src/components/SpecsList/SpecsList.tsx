@@ -7,7 +7,7 @@ const SpecsList: React.FC<{ specs: { [key: string]: string } }> = ({
   specs,
 }) => (
   <SpecsContainer>
-    <Label text="Specifications" isUpperCase variant='header' />
+    <Label text="Specifications" isUpperCase variant="header" />
     <div>
       {Object.keys(specs).map((key) => (
         <SpecificationRow key={key} label={key} value={specs[key]} />
