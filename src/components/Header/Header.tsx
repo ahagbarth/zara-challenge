@@ -1,13 +1,15 @@
 'use client';
 import React from 'react';
 import Bag from '../Bag';
-import { HeaderContainer } from './styles';
+import { HeaderContainer, HomeLogo } from './styles';
 import Logo from '../Logo';
 
 const Header = () => {
   return (
     <HeaderContainer>
-      <Logo />
+      <HomeLogo href="/">
+        <Logo />
+      </HomeLogo>
       <Bag />
     </HeaderContainer>
   );

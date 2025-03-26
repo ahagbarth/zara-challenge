@@ -1,18 +1,18 @@
 'use client';
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { ButtonComponent } from './styles';
 
-const Button: React.FC<{
+const Button: React.FC<PropsWithChildren & {
   isOutlined?: boolean;
   disabled?: boolean;
   onClick: () => void;
-}> = ({ isOutlined = false, disabled = false, onClick }) => (
+}> = ({ isOutlined = false, disabled = false, onClick, children }) => (
     <ButtonComponent
       isOutlined={isOutlined}
       disabled={disabled}
       onClick={onClick}
     >
-      Button
+      {children}
     </ButtonComponent>
   );
 

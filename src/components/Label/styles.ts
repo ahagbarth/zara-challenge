@@ -6,6 +6,10 @@ export const Typography = styled.span<{ variant?: string }>`
   line-height: 100%;
   font-family: 'Helvetica Neue';
 
+  ${({ variant }) => variant === 'header' && `
+    font-size: 20px;
+  `}
+
   ${({ variant }) => variant === 'caption' && `
     font-size: 10px;
     color: #79736D;

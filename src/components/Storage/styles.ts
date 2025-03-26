@@ -1,14 +1,12 @@
 import styled from '@emotion/styled';
 
-export const StorageContainer = styled.button`
+export const StorageContainer = styled.div<{isActive: boolean}>`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
   border: 1px solid #CCCCCC;
   background-color: transparent;
-
-  :active {
-    border-color: #000000
-  }
+  min-width: 89px;
+  ${({isActive}) => isActive && `border-color: #000000`}
 `;

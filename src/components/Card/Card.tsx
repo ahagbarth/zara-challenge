@@ -5,22 +5,25 @@ import {
   DetailsContainer,
   ImageContainer,
   PriceContainer,
+  StyledImage,
 } from './styles';
 import Label from '../Label';
+import { TProduct } from '@/features/ProductGrid/types';
 
-const Card = () => {
+const Card: React.FC<TProduct> = ({brand, name, basePrice, id, imageUrl}) => {
+
   return (
-    <CardContainer>
+    <CardContainer href={`/phone/${id}`}>
         <ImageContainer>
-            Card image
+            <StyledImage src={imageUrl} alt={name} width={312} height={257} />
         </ImageContainer>
       <CardInfo>
         <DetailsContainer>
-          <Label text={'Brand'} variant="caption" />
-          <Label text={'Phone Name'} variant="subtitle" />
+          <Label text={brand} variant="caption"  isUpperCase/>
+          <Label text={name} variant="subtitle" isUpperCase/>
         </DetailsContainer>
         <PriceContainer>
-          <Label text="999 EUR" variant="subtitle" />
+          <Label text={`${basePrice} EUR`} variant="subtitle" />
         </PriceContainer>
       </CardInfo>
     </CardContainer>

@@ -2,10 +2,15 @@
 import React from 'react';
 import { BagContainer } from './styles';
 import BagIcon from '../Icons/BagIcon';
+import { useStore } from '@/lib/StoreContext/StoreProvider';
+import { TStore } from '@/lib/StoreContext/types';
 
-const Bag: React.FC<{ quantity?: number }> = ({ quantity = 0 }) => {
+const Bag: React.FC = () => {
+  const { cart} = useStore() as TStore;
+  const quantity = cart.length
+
   return (
-    <BagContainer>
+    <BagContainer href="/cart">
       <BagIcon />
       {quantity}
     </BagContainer>

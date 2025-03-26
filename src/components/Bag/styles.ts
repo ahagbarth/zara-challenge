@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const BagContainer = styled.div`
+export const BagContainer = styled.a`
   display: flex;
   flex-direction: row;
   align-items: center;
