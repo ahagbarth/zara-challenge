@@ -8,5 +8,10 @@ export const StorageContainer = styled.div<{ isActive: boolean }>`
   border: 1px solid #cccccc;
   background-color: transparent;
   min-width: 89px;
-  ${({ isActive }) => isActive && `border-color: #000000`}
+  white-space: nowrap;
+  ${({ isActive }) =>
+    isActive &&
+    `
+  border-color: #000000
+  `}
 `;

@@ -14,7 +14,7 @@ const Card: React.FC<TProduct> = ({ brand, name, basePrice, id, imageUrl }) => {
   return (
     <CardContainer href={`/phone/${id}`}>
       <ImageContainer>
-        <StyledImage src={imageUrl} alt={name} width={312} height={257} />
+        <StyledImage src={imageUrl} alt={name} width={312} height={257} priority />
       </ImageContainer>
       <CardInfo>
         <DetailsContainer>

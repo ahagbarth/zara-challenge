@@ -17,6 +17,10 @@ import { redirect } from 'next/navigation';
 
 const CartPage = () => {
   const { cart, removeFromCart } = useStore() as TStore;
+  const cartTotalPrice = cart.reduce(
+    (total, item) => total + (item.storageOption.price || 0),
+    0
+  );
 
   return (
     <Container>
@@ -30,10 +34,11 @@ const CartPage = () => {
           />
         ))}
       </CartContent>
+      {/* TODO: fix footer layout */}
       <Footer>
         <Content>
           <Label text="Total" isUpperCase />
-          <Label text="10000" isUpperCase />
+          <Label text={`${cartTotalPrice} EUR`} isUpperCase />
         </Content>
         <ButtonGroup>
           <ContinueButton isOutlined onClick={() => redirect('/')}>

@@ -48,11 +48,10 @@ export const ButtonComponent = styled.button<{
   ${({ isOutlined }) =>
     isOutlined &&
     `
-        background: transparent;
+        background: #ffffff;
         color: #000000; 
     
         :hover { 
-            color: #504d49;
             border: 0.5px solid #282624;
         }
                 

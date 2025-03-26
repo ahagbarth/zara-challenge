@@ -10,7 +10,10 @@ export type TProduct = {
   colorOptions: TColor[];
   specs: Record<string, string>;
   storageOptions: TStorage[];
+  similarProducts: TSimilarProduct;
 };
+
+export type TSimilarProduct = TProduct[]
 
 export type TProductGrid = {
   products?: TProduct[];

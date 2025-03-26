@@ -73,6 +73,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
           </SelectorContainer>
         </Selectors>
         <Button
+        disabled={!selectedStorage}
         isFullWidth
           onClick={() =>
             onAddToCart({

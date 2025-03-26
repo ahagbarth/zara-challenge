@@ -13,7 +13,7 @@ const ProductListPage: React.FC<{ products: TProduct[] }> = ({ products }) => {
 
   useEffect(() => {
     setProducts(products);
-  }, []);
+  }, [products, setProducts]);
 
   useEffect(() => {
     fetch(

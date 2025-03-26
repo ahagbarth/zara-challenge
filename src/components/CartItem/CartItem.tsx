@@ -22,7 +22,7 @@ const CartItem: React.FC<{ product: TCartItem; onClick: () => void }> = ({
   return (
     <CartItemContainer>
       <ImageContainer>
-        <Image src={colorOption.imageUrl} alt={name} fill objectFit="contain" />
+        <Image src={colorOption.imageUrl} alt={name} fill objectFit="contain" priority/>
       </ImageContainer>
       <DetailsContainer>
         <Info>
