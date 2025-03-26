@@ -1,33 +1,21 @@
-"use client"
-import Button from '@/components/Button';
-import Card from '@/components/Card';
-import CartItem from '@/components/CartItem/CartItem';
-import Color from '@/components/Color';
-import Header from '@/components/Header';
-import Label from '@/components/Label';
-import Search from '@/components/Search';
-import SpecificationRow from '@/components/SpecificationRow';
-import Storage from '@/components/Storage';
+import ErrorPage from '@/pages/ErrorPage';
+import ProductListPage from '@/pages/ProductListPage';
 
-export default function Home() {
-  return (
-    <div>
-      <Header/>
-      <Label text="label" />
-      <Storage />
-      <Color color="#ffee00" />
-      <SpecificationRow />
-      <Button onClick={() => alert('hello')}/>
-      <br />
-      <br />
-      <Search placeholder='Search for a smartphone...'/>
-      <br /> 
-      <br /> 
-      <br /> 
-      <Card />
-      <br />
-      <br />
-      <CartItem/>
-    </div>
+const Home = async () => {
+  const data = await fetch(
+    `https://prueba-tecnica-api-tienda-moviles.onrender.com/products?limit=20`,
+    {
+      headers: { 'x-api-key': '87909682e6cd74208f41a6ef39fe4191' },
+    }
   );
-}
+
+  if (!data.ok) {
+    return <ErrorPage />;
+  }
+
+  const products = await data.json();
+
+  return <ProductListPage products={products}/>;
+};
+
+export default Home;
